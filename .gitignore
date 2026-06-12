@@ -1,5 +1,6 @@
-node_modules/
+initnode_modules/
 .DS_Store
 dist/
 .env
 *.log
+node_modules
