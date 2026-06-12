@@ -19,7 +19,9 @@ const router = createBrowserRouter([
         path: "*",
         element: <App /> // Redirects all unknown paths (like /projects) to the main App which handles state-based routing
     }
-]);
+], {
+    basename: import.meta.env.BASE_URL
+});
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
