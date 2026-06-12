@@ -1,10 +1,185 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════
+   RAMDOOT RESTORES — Ancient Indian Heritage Design System
+   Inspired by: Chand Baori, Rani Ki Vav, Kailash Temple,
+   Ram Mandir, ancient Rajputana & Maratha architecture
+   ══════════════════════════════════════════════════════ */
+
 @theme {
-    --color-btn-primary: #292929;
-    --color-highlight: #828283;
+    --color-btn-primary: #b45309;
+    --color-highlight:   #d97706;
 }
 
+/* ─── Fonts ─── */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f5e6c8;
+    color: #2d1f0e;
+    background-image: radial-gradient(ellipse at top, #fdf3e0 0%, #f5e6c8 60%);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .font-historical {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.02em;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f5e6c8; }
+::-webkit-scrollbar-thumb { background: #c9862a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b45309; }
+
+/* ─── Temple pillar card ─── */
+.pillar-card {
+    background: linear-gradient(145deg, #fdf3e0, #f5e6c8);
+    border: 1px solid #d4a017;
+    border-radius: 4px;
+    box-shadow:
+        0 4px 6px -1px rgba(45,31,14,0.15),
+        0 2px 4px -1px rgba(45,31,14,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    position: relative;
+    overflow: hidden;
+}
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6b1a1a, #d4a017, #c9862a, #d4a017, #6b1a1a);
+}
+
+/* ─── Sidebar deep stone ─── */
+.sidebar-stone {
+    background: linear-gradient(180deg, #1a0f05 0%, #2d1f0e 40%, #1a0f05 100%);
+    border-right: 2px solid rgba(212,160,23,0.27);
+    box-shadow: 4px 0 20px rgba(45,31,14,0.4);
+}
+
+/* ─── Gold ornament line ─── */
+.ornament-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4a017, #e8750a, #d4a017, transparent);
+    margin: 8px 0;
+}
+
+/* ─── Nav button active state ─── */
+.nav-btn-active {
+    background: linear-gradient(135deg, #d4a017 0%, #c9862a 100%);
+    color: #1a0f05 !important;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(212,160,23,0.4);
+}
+.nav-btn-inactive {
+    color: rgba(212,160,23,0.7);
+    transition: all 0.2s;
+}
+.nav-btn-inactive:hover {
+    background: rgba(212,160,23,0.12);
+    color: #d4a017;
+    transform: translateX(2px);
+}
+
+/* ─── Ancient button ─── */
+.btn-temple {
+    background: linear-gradient(135deg, #d4a017, #c9862a);
+    color: #1a0f05;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.05em;
+    border: 1px solid #b45309;
+    box-shadow: 0 2px 8px rgba(180,83,9,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: all 0.2s;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 4px;
+}
+.btn-temple:hover {
+    background: linear-gradient(135deg, #e8b420, #d4a017);
+    box-shadow: 0 4px 16px rgba(180,83,9,0.5);
+    transform: translateY(-1px);
+}
+
+/* ─── Input fields with stone style ─── */
+.input-stone {
+    background: #fdf3e0;
+    border: 1px solid rgba(201,134,42,0.53);
+    border-radius: 4px;
+    color: #2d1f0e;
+    padding: 10px 14px;
+    transition: all 0.2s;
+    width: 100%;
+}
+.input-stone:focus {
+    outline: none;
+    border-color: #d4a017;
+    box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+}
+
+/* ─── Heritage badge ─── */
+.heritage-badge {
+    background: linear-gradient(135deg, rgba(212,160,23,0.15), rgba(201,134,42,0.1));
+    border: 1px solid rgba(212,160,23,0.33);
+    color: #a0522d;
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ─── Animations ─── */
+@keyframes shimmer-gold {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+.shimmer-gold {
+    background: linear-gradient(90deg, #d4a017, #f5c842, #d4a017, #c9862a, #d4a017);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-gold 4s linear infinite;
+}
+
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-6px); }
+}
+.float-gentle { animation: float-gentle 4s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 8px rgba(212,160,23,0.3); }
+    50%       { box-shadow: 0 0 24px rgba(212,160,23,0.7); }
+}
+.pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+/* ─── Baoli stepped pattern background (for hero) ─── */
+.baoli-bg {
+    background:
+        linear-gradient(180deg, #1a0f05 0%, #2d1f0e 100%);
+    position: relative;
+}
+.baoli-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            rgba(212,160,23,0.04) 0px, rgba(212,160,23,0.04) 1px,
+            transparent 1px, transparent 40px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(212,160,23,0.04) 0px, rgba(212,160,23,0.04) 1px,
+            transparent 1px, transparent 40px
+        );
+    pointer-events: none;
+}
+
+/* ─── Font faces (Delight) ─── */
 @font-face {
     font-family: 'Delight';
     src: url('./assets/fonts/delight-extralight.otf') format('opentype');

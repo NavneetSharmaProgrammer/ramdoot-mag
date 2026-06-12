@@ -10,11 +10,15 @@ import InfluencerCampaigns from "./pages/influencer-campaigns";
 import { useRazorpay } from "@/components/RazorpayButton";
 import { BACKEND_URL } from "./config/constants";
 import DUMMY_MAGAZINES from "./data/dummyMagazines";
-
-
-
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Support from "./pages/Support";
+import Settings from "./pages/Settings";
+import Security from "./pages/Security";
+import Help from "./pages/Help";
+import Footer from "./components/Footer";
 function App() {
-  const [activePage, setActivePage] = useState("users");
+  const [activePage, setActivePage] = useState("home");
   const [magazines, setMagazines] = useState(DUMMY_MAGAZINES);
   const [message, setMessage] = useState("");
   const { pay, loading } = useRazorpay();
@@ -32,6 +36,18 @@ function App() {
 
   function renderPage() {
     switch (activePage) {
+      case "home":
+        return <Home />;
+      case "projects":
+        return <Projects />;
+      case "support":
+        return <Support />;
+      case "security":
+        return <Security />;
+      case "settings":
+        return <Settings />;
+      case "help":
+        return <Help />;
       case "subscriptions":
         return <Subscriptions />;
       case "payments":
@@ -61,12 +77,16 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-[#f0eeef]">
+    <div className="flex flex-col md:flex-row min-h-screen" style={{background:'#1a0f05'}}>
       <Nav activePage={activePage} onNavigate={setActivePage} />
-      <main className="flex-1 p-2 md:p-6 bg-white rounded-none md:rounded-2xl border border-slate-200 shadow-sm m-0 md:m-2 overflow-auto">
+      <main className="flex-1 flex flex-col overflow-auto" style={{
+        background: 'linear-gradient(160deg, #fdf3e0 0%, #f5e6c8 50%, #fdf3e0 100%)',
+        borderLeft: '2px solid rgba(212,160,23,0.2)'
+      }}>
         <ErrorBoundary key={activePage}>
           {renderPage()}
         </ErrorBoundary>
+        <Footer />
       </main>
     </div>
   );

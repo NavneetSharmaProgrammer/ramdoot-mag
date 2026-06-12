@@ -14,6 +14,10 @@ const router = createBrowserRouter([
     {
         path: "login",
         element: <Login />
+    },
+    {
+        path: "*",
+        element: <App /> // Redirects all unknown paths (like /projects) to the main App which handles state-based routing
     }
 ]);
 

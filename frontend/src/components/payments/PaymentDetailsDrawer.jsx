@@ -51,7 +51,7 @@ export default function PaymentDetailsDrawer({
                 </button>
                 <span className="text-xs text-slate-400">
                   Trouble in getting refund{' '}
-                  <span className="font-medium text-slate-900">Connect Support</span>
+                  <a href="mailto:support@ramdootrestores.in" className="font-medium text-slate-900 hover:underline">Connect Support</a>
                 </span>
               </div>
             </>

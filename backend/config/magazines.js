@@ -1,5 +1,5 @@
 const ORG = {
-  name: 'Ramdoot Foundation',
+  name: 'Ramdoot Restores',
   currency: 'INR',
   theme: '#1e293b',
 };

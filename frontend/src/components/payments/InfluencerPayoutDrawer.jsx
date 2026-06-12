@@ -33,7 +33,7 @@ function StatusBanner({ status }) {
           </p>
           <p className="text-xs text-emerald-700 mt-0.5">
             The payment has been {isProcessing ? 'fetched' : 'completed'}, you can retry and if
-            still facing a problem contact support.
+            still facing a problem contact <a href="mailto:support@ramdootrestores.in" className="underline font-medium">support</a>.
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function InfluencerPayoutDrawer({
           </button>
           <p className="text-center text-xs text-slate-400">
             Trouble in getting refund{' '}
-            <span className="font-medium text-slate-900">Connect Support</span>
+            <a href="mailto:support@ramdootrestores.in" className="font-medium text-slate-900 hover:underline">Connect Support</a>
           </p>
         </div>
       }

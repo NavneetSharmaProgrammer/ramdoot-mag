@@ -4,18 +4,20 @@ export const BACKEND_URL =
 export const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID;
 
 export const ORG = {
-  name: 'Ramdoot Foundation',
+  name: 'Ramdoot Restores',
   currency: 'INR',
-  currencySymbol: '\u20B9',
-  theme: '#1e293b',
+  currencySymbol: '₹',
+  theme: '#f97316',
 };
 
 // --- Navigation ---
 export const NAV_ITEMS = {
   main: [
     { key: 'home',                 label: 'Home' },
+    { key: 'projects',             label: 'Projects' },
+    { key: 'support',              label: 'Support' },
     { key: 'users',                label: 'Users' },
-    { key: 'magazine',              label: 'Magazine' },
+    { key: 'magazine',             label: 'Magazine' },
     { key: 'subscriptions',        label: 'Subscriptions' },
     { key: 'influencer-campaigns', label: 'Influencers Campaigns' },
     { key: 'publications',         label: 'Publications' },

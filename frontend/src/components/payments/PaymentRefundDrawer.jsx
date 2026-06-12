@@ -26,7 +26,7 @@ export default function PaymentRefundDrawer({ open, onClose, currentStep = 1 }) 
           </button>
           <p className="text-center text-xs text-slate-400">
             Trouble in getting refund{' '}
-            <span className="font-medium text-slate-900">Connect Support</span>
+            <a href="mailto:support@ramdootrestores.in" className="font-medium text-slate-900 hover:underline">Connect Support</a>
           </p>
         </div>
       }
